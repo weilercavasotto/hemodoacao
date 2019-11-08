@@ -1,0 +1,134 @@
+//https://www.inca.gov.br/perguntas-frequentes/doacao-de-sangue?page=1
+
+{
+  "questions": [
+    {
+      "title": "O que é preciso para doar sangue?",
+      "body": "Podem doar sangue pessoas entre 16 e 69 anos e que estejam pesando mais de 50kg. Além disso, é preciso apresentar documento oficial com foto e menores de 18 anos só podem doar com consentimento formal dos responsáveis. Pessoas com febre, gripe ou resfriado, diarreia recente, grávidas e mulheres no pós-parto não podem doar temporariamente."
+    },
+    {
+      "title": "É preciso levar algum documento de identidade para a doação de sangue?",
+      "body": "O candidato deve apresentar documento original com foto, expedido pelo órgão oficial. Exemplos: Carteira de Identidade (RG ou RNE), passaporte, Carteira de Trabalho, Carteira de Identidade de Profissional, Carteira Nacional de Habilitação com foto e Certificado de Reservista."
+    },
+    {
+      "title": "É necessário estar em jejum para doar sangue?",
+      "body": "O doador não deve estar em jejum, mas é importante evitar alimentos gordurosos três horas antes da doação."
+    },
+    {
+      "title": "Quanto tempo dura a doação de sangue?",
+      "body": "O procedimento todo (cadastro, aferição de sinais vitais, teste de anemia, triagem clínica, coleta do sangue e lanche) dura em média 40 minutos."
+    },
+    {
+      "title": "Doar sangue dói?",
+      "body": "Percepção de dor é pessoal. É necessário puncionar a veia para retirada do sangue."
+    },
+    {
+      "title": "Quanto tempo organismo leva para repor o sangue doado?",
+      "body": "O organismo repõe o volume de sangue doado nas primeiras 72 horas após a doação."
+    },
+    {
+      "title": "O que é feito com o sangue que doamos?",
+      "body": "Após a coleta, a bolsa de sangue é fracionada em componentes sanguíneos (concentrado de hemácias, de plaquetas e plasma). Esses componentes são liberados para uso somente após o resultado dos exames sorológicos. Uma única unidade doada pode beneficiar três pacientes."
+    },
+    {
+      "title": "Quantas vezes por ano posso doar sangue?",
+      "body": "Para homens, o intervalo mínimo entre as doações é de 60 dias (com até quatro doações no período de 12 meses). Para mulheres, o intervalo mínimo é de 90 dias (com até três no período de 12 meses)."
+    },
+    {
+      "title": "Quem tem diabetes pode doar sangue?",
+      "body": "Se a pessoa que tenha diabetes estiver controlando apenas com alimentação ou hipoglicemiantes orais e não apresente alterações vasculares, poderá doar. Caso ela já tenha utilizado insulina, não poderá doar."
+    },
+    {
+      "title": "Tomei vacina para Hepatite B. Posso doar sangue?",
+      "body": "A vacinação para Hepatite B impede a doação por 48 horas."
+    },
+    {
+      "title": "Tomei vacina para febre amarela. Posso doar sangue?",
+      "body": "Após 4 semanas."
+    },
+    {
+      "title": "Tomei vacina para gripe. Posso doar sangue?",
+      "body": "Após 48 horas"
+    },
+    {
+      "title": "A mulher pode doar sangue durante o período menstrual?",
+      "body": "Sim."
+    },
+    {
+      "title": "Quem estiver fazendo tratamento com antibiótico pode doar sangue?",
+      "body": "Se o antibiótico for para infecções simples e sem complicações, o doador deve aguardar 15 dias após a última dose do antibiótico para doar sangue. Infecções mais graves como pneumonia, meningite, entre outras, podem necessitar de um tempo maior para liberação do candidato à doação."
+    },
+    {
+      "title": "Quem estiver fazendo tratamento com anti-inflamatório pode doar sangue?",
+      "body": "Dependendo do motivo, a doação pode ser realizada normalmente. Não se esqueça de informar o nome do anti-inflamatório que você está tomando."
+    },
+    {
+      "title": "Quem estiver fazendo tratamento homeopático pode doar sangue?",
+      "body": "Sim, mas depende do motivo."
+    },
+    {
+      "title": "Quem tomou analgésico pode doar sangue?",
+      "body": "Pode, mas é importante que no dia da doação o doador esteja sem sintomas."
+    },
+    {
+      "title": "Quem faz tratamento para acne pode doar sangue?",
+      "body": "Depende do tipo de tratamento. Caso o tratamento inclua o uso de antibióticos ou outros remédios de uso oral, não será possível doar."
+    },
+    {
+      "title": "Quem está fazendo regime para emagrecer ou dieta pode doar sangue?",
+      "body": "Sim. Dietas para emagrecimento não impedem a doação de sangue, desde que a perda não tenha comprometido a saúde."
+    },
+    {
+      "title": "O que acontece se uma pessoa que não sabe se está anêmica quiser doar sangue?",
+      "body": "O candidato à doação é atendido por um profissional do Serviço de Hemoterapia, que realiza um teste rápido para verificar se o doador está apto para doar."
+    },
+    {
+      "title": "O uso de medicamento pode impedir alguém de doar sangue?",
+      "body": "O uso de medicamento deve ser analisado caso a caso. Portanto, antes de doar sangue consulte o Serviço de Hemoterapia."
+    },
+    {
+      "title": "Quem não pode doar sangue?",
+      "body": "Não podem doar sangue pessoas que tiveram hepatite após os 11 anos de idade, tenham evidência clínica ou laboratorial de doenças sexualmente transmissíveis, como hepatite B e C, aids (vírus HIV), doenças ligadas ao vírus HTLV I e II. Doenças de chagas, o uso de drogas ilícitas injetáveis e malária também são impedimentos definitivos para doar sangue."
+    },
+    {
+      "title": "Doar sangue engrossa ou afina o sangue?",
+      "body": "Não engrossa nem afina o sangue."
+    },
+    {
+      "title": "Há substituto para o sangue?",
+      "body": "Não. Ainda não há nenhum substituto do sangue."
+    },
+    {
+      "title": "O que é sangue raro?",
+      "body": "É um sangue com característica específica pouco frequente na população e algumas vezes, pode ser uma característica familiar."
+    },
+    {
+      "title": "O que é sangue universal?",
+      "body": "Hoje sabemos que não existe sangue universal. Todas as pessoas têm características diferentes e por isso, quando necessitam de transfusão de sangue, precisamos fazer exames antes da transfusão independente do grupo sanguíneo do doador e do receptor."
+    },
+    {
+      "title": "Doar sangue engorda ou emagrece?",
+      "body": "Ao doar sangue você não engorda nem emagrece."
+    },
+    {
+      "title": "Doar sangue vicia?",
+      "body": "Não. A doação de sangue não está relacionada a nenhuma dependência."
+    },
+    {
+      "title": "Fiz uma tatuagem há um ano. Posso doar sangue?",
+      "body": "Sim. Quem fez tatuagem há mais de um ano pode doar sangue."
+    },
+    {
+      "title": "Pessoas com piercing podem doar sangue?",
+      "body": "Sim. Quem colocou o piercing há mais de um ano pode doar sangue, desde que não seja em locais como área genital ou cavidade oral."
+    },
+    {
+      "title": "Grávidas podem doar sangue?",
+      "body": "Não. Se o parto for normal, a mulher pode doar depois de três meses. Em caso de cesariana, após seis meses. Se estiver amamentando, aguardar 12 meses após o parto."
+    },
+    {
+      "title": "Quem está gripado pode doar sangue?",
+      "body": "Recomenda-se aguardar sete dias após a cura para poder doar."
+    }
+  ]
+}
