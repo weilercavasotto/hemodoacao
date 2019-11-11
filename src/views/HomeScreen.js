@@ -301,11 +301,16 @@ export default class HomeScreen extends React.Component {
             let arrayHolder = this.state.bloodRequests.requests;
 
             const newData = arrayHolder.filter( (item) => {
-
-                const itemData = item.hemocentro ? item.hemocentro.toUpperCase() : ''.toUpperCase();
+                const hemocentro = item.hemocentro ? item.hemocentro.toUpperCase() : ''.toUpperCase();
+                const requested_blood_type = item.requested_blood_type ? item.requested_blood_type.toUpperCase() : ''.toUpperCase();
+                const address = item.address ? item.address.toUpperCase() : ''.toUpperCase();
 
                 const textData = text.toUpperCase();
-                return itemData.indexOf(textData) > -1;
+
+                if (hemocentro.indexOf(textData) > -1 || requested_blood_type.indexOf(textData) > -1 || address.indexOf(textData) > -1) {
+
+                    return true;
+                }
             });
 
             this.setState({ searchValue: text, bloodRequests: { requests: newData } });
