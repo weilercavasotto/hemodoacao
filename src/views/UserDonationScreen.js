@@ -34,6 +34,7 @@ export default class HomeScreen extends React.Component {
         searchValue: '',
         showAddModal: false,
         inputs: {
+            date: Moment().format('DD/MM/YYYY'),
             hemocentro: '',
             city: '',
         },
@@ -195,7 +196,8 @@ export default class HomeScreen extends React.Component {
             if (valid) {
 
                 let data = this.state.inputs;
-                data.date = firebase.firestore.Timestamp.fromDate(new Date(Moment().format('YYYY/MM/DD')));
+                let dateParts = data.date.split('/');
+                data.date = firebase.firestore.Timestamp.fromDate(new Date(dateParts[2], dateParts[1] - 1, dateParts[0]));
                 data.user = this.state.user.auth.currentUser.uid;
 
                 Firestore.insert('donations', data);
@@ -248,7 +250,7 @@ export default class HomeScreen extends React.Component {
 
                         <TextField onBlur={ () => { this.validateInput('hemocentro') } } error={this.state.inputError.hemocentro} onChangeText={ (value) => this.handleInputValue('hemocentro', value) } label={'Hemocentro Doação'} tintColor='#ff4949' lineWidth={1}/>
                         <TextField onBlur={ () => { this.validateInput('city') } } error={this.state.inputError.city} onChangeText={ (value) => this.handleInputValue('city', value) } label={'Cidade'} tintColor='#ff4949' lineWidth={1}/>
-                        <TextField value={ Moment().format('DD/MM/YYYY') } onChangeText={ (value) => this.handleInputValue('date', value) } label={'Data'} tintColor='#ff4949' lineWidth={1}/>
+                        <TextField value={ this.state.inputs.date } onChangeText={ (value) => this.handleInputValue('date', value) } label={'Data'} tintColor='#ff4949' lineWidth={1}/>
 
                         <View style={styles.divider}/>
 

@@ -76,7 +76,7 @@ export default class BloodRequestScreen extends React.Component {
             { key: 6, blood: 'O+', selected: false },
             { key: 7, blood: 'O-', selected: false },
             { key: 8, buttonLabel: 'Qualquer Tipo', blood: 'any', selected: false },
-            { key: 9, buttonLabel: 'Não Sei', blood: 'dont_know', selected: false },
+            // { key: 9, buttonLabel: 'Não Sei', blood: 'dont_know', selected: false },
         ],
         mapMarkerData: { }
     };
@@ -219,7 +219,7 @@ export default class BloodRequestScreen extends React.Component {
 
                 return (
 
-                    <Button buttonStyle={{ borderRadius: 6, backgroundColor: prop.selected ? '#ff4949' : '#dedede' }} key={ key } onPress={ () => { this.handleBloodSelection(prop.key) } } containerStyle={{marginRight: 15}} title={ prop.buttonLabel } titleStyle={{fontWeight: 'bold'}}/>
+                    <Button buttonStyle={{ width: 270, borderRadius: 6, backgroundColor: prop.selected ? '#ff4949' : '#dedede' }} key={ key } onPress={ () => { this.handleBloodSelection(prop.key) } } containerStyle={{marginRight: 15}} title={ prop.buttonLabel } titleStyle={{fontWeight: 'bold'}}/>
                 );
             }
          })
@@ -325,7 +325,6 @@ export default class BloodRequestScreen extends React.Component {
                         <View style={{flexDirection: 'row'}}>
                             <CheckBox containerStyle={{width: 100, paddingHorizontal: 0, backgroundColor: '#FFF', borderColor: '#FFF'}} checkedColor={'#ff4949'} uncheckedColor={'grey'} checkedIcon='dot-circle-o' uncheckedIcon='circle-o' onPress={ () => { this.handleSexChange('male') }} checked={this.state.genreCheckbox.male} title={'Masculino'}/>
                             <CheckBox containerStyle={{width: 90, paddingHorizontal: 0, backgroundColor: '#FFF', borderColor: '#FFF'}} checkedColor={'#ff4949'} uncheckedColor={'grey'} checkedIcon='dot-circle-o' uncheckedIcon='circle-o' onPress={ () => { this.handleSexChange('female') }} checked={this.state.genreCheckbox.female} title={'Feminino'}/>
-                            <CheckBox containerStyle={{paddingHorizontal: 0, backgroundColor: '#FFF', borderColor: '#FFF'}} checkedColor={'#ff4949'} uncheckedColor={'grey'} checkedIcon='dot-circle-o' uncheckedIcon='circle-o' onPress={ () => { this.handleSexChange('none') }} checked={this.state.genreCheckbox.none} title={'Não Sei'}/>
                         </View>
 
                         <FieldSet title={'Dados da Solicitação'}/>
