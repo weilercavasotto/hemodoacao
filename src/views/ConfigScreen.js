@@ -93,7 +93,7 @@ export default class ProfileScreen extends React.Component {
 
                             <View style={styles.divider}/>
 
-                            <View style={{ marginTop: '35%' }}>
+                            <View style={{ marginTop: '10%' }}>
 
                                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'info-circle'}/> } onPress={() => { this.showModal('showAboutModal') }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{ backgroundColor: '#ff4949'}} title={'SOBRE O APLICATIVO'}/>
                                 <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showAboutModal }>
