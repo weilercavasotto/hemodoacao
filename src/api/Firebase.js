@@ -1,6 +1,7 @@
 import firebase from 'react-native-firebase'
 import Moment from 'moment';
 import * as AsyncStorage from 'react-native';
+import BloodRequestHelper from '../helpers/BloodRequestHelper';
 
 class Auth {
 
@@ -17,7 +18,8 @@ class Auth {
                 sex: data.sex,
                 notifRange: 100,
                 notify_blood_requests: true,
-                notify_next_donation: true
+                notify_next_donation: true,
+                notify_only_compatible: false,
             });
 
         });
@@ -39,6 +41,7 @@ class Auth {
             notifRange: 100,
             notify_blood_requests: true,
             notify_next_donation: true,
+            notify_only_compatible: false,
             facebook: true
         });
 
@@ -155,7 +158,7 @@ class Notification {
         console.log(response);
     }
 
-    static async sendRequestNotification(data) {
+    static async sendRequestNotification(data, bloodType) {
 
         let users = await Firestore.getCollection('users', ['name', 'desc']);
 
@@ -165,7 +168,14 @@ class Notification {
 
             if (userData.notify_blood_requests && userData.fcm_token) {
 
-                this.sendPush(userData.fcm_token, data);
+                if (userData.notify_only_compatible && BloodRequestHelper.compareBloodType(userData.blood_type, bloodType)) {
+
+                    this.sendPush(userData.fcm_token, data);
+
+                } else if (!userData.notify_only_compatible) {
+
+                    this.sendPush(userData.fcm_token, data);
+                }
             }
         });
     }

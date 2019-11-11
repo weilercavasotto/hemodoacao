@@ -75,6 +75,13 @@ export default class ProfileScreen extends React.Component {
                                 </View>
                             </View>
 
+                            <View style={styles.userFieldContainer}>
+                                <Text style={ styles.userFieldPrimary }>{'Notificar Apenas Pedidos Compatíveis'}</Text>
+                                <View style={ styles.userFieldSecondary }>
+                                    <Switch onChange={() => { this.handleSwitchChange('notify_only_compatible') }} value={this.state.user.data.notify_only_compatible} />
+                                </View>
+                            </View>
+
                             <View style={styles.divider}/>
 
                             <Text style={ styles.userFieldPrimary }>{'Distância Mínima Notificações'}</Text>

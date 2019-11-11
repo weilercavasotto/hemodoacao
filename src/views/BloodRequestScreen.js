@@ -274,7 +274,7 @@ export default class BloodRequestScreen extends React.Component {
                 body: 'Há um novo pedido de doação do tipo '+data.requested_blood_type+' registrado.\nAbra o aplicativo para visualizar.'
             };
 
-            Notification.sendRequestNotification(notificationData);
+            Notification.sendRequestNotification(notificationData, data.requested_blood_type);
 
         } else {
 
