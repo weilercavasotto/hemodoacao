@@ -105,7 +105,7 @@ export default class ProfileScreen extends React.Component {
                             <View style={{ }}>
 
                                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'info-circle'}/> } onPress={() => { this.showModal('showAboutModal') }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{ backgroundColor: '#ff4949'}} title={'SOBRE O APLICATIVO'}/>
-                                <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showAboutModal }>
+                                <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showAboutModal } onBackdropPress={() => this.setState({ showAboutModal: false }) }>
                                     <View>
                                         <Text style={{ fontWeight: 'bold', fontSize: 15, paddingBottom: 12 }}> Sobre o Aplicativo </Text>
                                         <Text style={{ flexWrap: 'wrap', fontSize: 15, paddingBottom: 12 }}>Esse aplicativo foi desenvolvido para o trabalho final do curso de Sistemas de Informação - Unochapecó. </Text>
@@ -117,7 +117,7 @@ export default class ProfileScreen extends React.Component {
 
                                 <View style={styles.divider}/>
                                 <Button onPress={() => { this.showModal('showTermModal') }}  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'book'}/> } raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{ backgroundColor: '#ff4949'}} title={'TERMOS DE USO'}/>
-                                <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showTermModal }>
+                                <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showTermModal } onBackdropPress={() => this.setState({ showTermModal: false }) }>
                                     <View>
                                         <Text style={{ fontWeight: 'bold', fontSize: 15, paddingBottom: 12 }}> Sobre o Aplicativo </Text>
                                         <Text style={{ flexWrap: 'wrap', fontSize: 15, paddingBottom: 12 }}>Esse aplicativo foi desenvolvido para o trabalho final do curso de Sistemas de Informação - Unochapecó. </Text>

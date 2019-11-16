@@ -107,7 +107,7 @@ export default class ProfileScreen extends React.Component {
 
                     </ScrollView>
 
-                    <Overlay overlayStyle={{marginTop: 30, width: '94%', height: 'auto'}} isVisible={ this.state.showModal }>
+                    <Overlay overlayStyle={{marginTop: 30, width: '94%', height: 'auto'}} isVisible={ this.state.showModal } onBackdropPress={() => this.setState({ showModal: false }) }>
                         <View>
                             <Text style={{ fontWeight: 'bold', fontSize: 15, paddingBottom: 12 }}>{ this.getTitle() }</Text>
                             <Text style={{ flexWrap: 'wrap', fontSize: 15, paddingBottom: 12, textAlign: 'justify' }}>{ this.getBody() }</Text>

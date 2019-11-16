@@ -156,7 +156,7 @@ export default class ProfileScreen extends React.Component {
     renderEditModal() {
 
         return (
-            <Overlay isVisible={ this.state.showEditOverlay } height={ 'auto' } width={'95%'}>
+            <Overlay isVisible={ this.state.showEditOverlay } height={ 'auto' } width={'95%'} onBackdropPress={() => this.setState({ showEditOverlay: false }) }>
                 <View>
 
                     <FieldSet title={'Alterar Dados'}/>
