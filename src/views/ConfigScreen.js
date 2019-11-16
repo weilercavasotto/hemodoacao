@@ -32,10 +32,10 @@ export default class ProfileScreen extends React.Component {
         Firestore.update('users', this.state.user.auth.currentUser.uid, this.state.user.data);
     }
 
-    handleRangeChange(value) {
+    handleRangeChange(value, field) {
 
         let oldState = this.state.user;
-        oldState.data['notifRange'] = value;
+        oldState.data[field] = value;
 
         this.setState({ user: oldState });
 
@@ -87,13 +87,22 @@ export default class ProfileScreen extends React.Component {
                             <Text style={ styles.userFieldPrimary }>{'Distância Mínima Notificações'}</Text>
 
                             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: '3%' }}>
-                                <Slider step={1} style={{width: '68%'}} thumbTintColor={'#ff4949'} minimumTrackTintColor={'#ff4949'} minimumValue={ 1 } maximumValue={ 100 } value= { this.state.user.data.notifRange } onSlidingComplete={ (value) => { this.handleRangeChange(value) } }/>
+                                <Slider step={1} style={{width: '68%'}} thumbTintColor={'#ff4949'} minimumTrackTintColor={'#ff4949'} minimumValue={ 1 } maximumValue={ 100 } value= { this.state.user.data.notifRange } onSlidingComplete={ (value) => { this.handleRangeChange(value, 'notifRange') } }/>
                                 <Text style={styles.daysText}> { this.state.user.data.notifRange >= 100 ? 'Sem Filtro' : this.state.user.data.notifRange } { this.state.user.data.notifRange < 100 ? 'km' : '' } </Text>
                             </View>
 
                             <View style={styles.divider}/>
 
-                            <View style={{ marginTop: '10%' }}>
+                            <Text style={ styles.userFieldPrimary }>{'Lembrete da Próxima Doação'}</Text>
+
+                            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: '3%' }}>
+                                <Slider step={1} style={{width: '68%'}} thumbTintColor={'#ff4949'} minimumTrackTintColor={'#ff4949'} minimumValue={ 1 } maximumValue={ 5 } value= { this.state.user.data.next_donation_reminder } onSlidingComplete={ (value) => { this.handleRangeChange(value, 'next_donation_reminder') } }/>
+                                <Text style={styles.daysText}> {  this.state.user.data.next_donation_reminder } { 'dias antes' } </Text>
+                            </View>
+
+                            <View style={styles.divider}/>
+
+                            <View style={{ }}>
 
                                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'info-circle'}/> } onPress={() => { this.showModal('showAboutModal') }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{ backgroundColor: '#ff4949'}} title={'SOBRE O APLICATIVO'}/>
                                 <Overlay overlayStyle={{marginTop: 30, width: '92%', height: 'auto'}} isVisible={ this.state.showAboutModal }>

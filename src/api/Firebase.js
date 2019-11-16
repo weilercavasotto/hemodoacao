@@ -20,6 +20,7 @@ class Auth {
                 notify_blood_requests: true,
                 notify_next_donation: true,
                 notify_only_compatible: false,
+                next_donation_reminder: 5,
             });
 
         });
@@ -42,6 +43,7 @@ class Auth {
             notify_blood_requests: true,
             notify_next_donation: true,
             notify_only_compatible: false,
+            next_donation_reminder: 5,
             facebook: true
         });
 
@@ -180,7 +182,7 @@ class Notification {
         });
     }
 
-    static scheduleNotification(data, notificationDate) {
+    static scheduleNotification(data, notificationDate, body) {
         if (notificationDate) {
 
             const channel = new firebase.notifications.Android.Channel(

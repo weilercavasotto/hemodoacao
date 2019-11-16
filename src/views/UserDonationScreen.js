@@ -197,17 +197,24 @@ export default class HomeScreen extends React.Component {
 
                 let data = this.state.inputs;
                 let dateParts = data.date.split('/');
+                let originalDate = data.date;
                 data.date = firebase.firestore.Timestamp.fromDate(new Date(dateParts[2], dateParts[1] - 1, dateParts[0]));
                 data.user = this.state.user.auth.currentUser.uid;
 
                 Firestore.insert('donations', data);
                 this.refs.toast.show('Doação registrada com sucesso!', 4000);
 
-                let notifDate = Moment();
+                let notifDate = Moment(originalDate, 'DD/MM/YYYY');
+                let reminder = Moment(originalDate, 'DD/MM/YYYY');
+
                 let daysToAdd = this.state.user.data.sex === 'male' ? 60 : 90;
                 notifDate.add(daysToAdd, 'days');
 
-                Notification.scheduleNotification(data, notifDate.toDate());
+                let daysToRemove = this.state.user.next_donation_reminder;
+                reminder.subtract(daysToRemove, 'days');
+
+                Notification.scheduleNotification(data, notifDate.toDate(), 'A partir de hoje você já está apto a realizar uma nova doação de sangue!');
+                Notification.scheduleNotification(data, reminder.toDate(), 'Faltam' + daysToRemove +  'dias para a sua próxima doação de sangue');
 
                 this.getDonations();
 
@@ -225,7 +232,23 @@ export default class HomeScreen extends React.Component {
     handleInputValue(input, value) {
 
         let previousState = this.state.inputs;
-        previousState[input] = value;
+
+        if (input === 'date') {
+
+            if (value.length == 2) {
+                value += '/'
+            }
+
+            if (value.length == 5) {
+                value += '/'
+            }
+
+            if (value.length <= 10) {
+                previousState[input] = value;
+            }
+        } else {
+            previousState[input] = value;
+        }
 
         this.setState({ inputs: previousState });
     }
@@ -244,7 +267,7 @@ export default class HomeScreen extends React.Component {
 
                 </ScrollView>
 
-                <Overlay isVisible={ this.state.showAddModal } height={ 'auto' } width={'95%'}>
+                <Overlay isVisible={ this.state.showAddModal } height={ 'auto' } width={'95%'} onBackdropPress={() => this.setState({ showAddModal: false })}>
                     <View>
                         <FieldSet title={'Nova Doação'}/>
 

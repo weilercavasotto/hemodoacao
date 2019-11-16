@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
-import {Card, Overlay, Button, CheckBox} from 'react-native-elements';
+import {Card, Overlay, Button, CheckBox, Tooltip} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Header from '../components/Header';
@@ -18,6 +18,8 @@ export default class ProfileScreen extends React.Component {
     state = {
         showEditOverlay: false,
         nextDonationDay: '',
+        nextDonationRemainingDays: 0,
+        nextDonationDayColor: 'black',
         user: { auth: { }, data: { } },
         inputs: {
             bloodTypes: [
@@ -233,6 +235,19 @@ export default class ProfileScreen extends React.Component {
         }
     }
 
+    getNextDonationTextColor(remainingDays) {
+
+        if (remainingDays > 0) {
+            if (remainingDays > 10) {
+                this.setState({ nextDonationDayColor: 'black' });
+            } else if (remainingDays <= 10 && remainingDays > 1) {
+                this.setState({ nextDonationDayColor: 'orange' });
+            } else if (remainingDays <= 1) {
+                this.setState({ nextDonationDayColor: 'green' });
+            }
+        }
+    }
+
     async getNextDonationDate() {
 
         let userId = this.state.user.auth.currentUser.uid;
@@ -253,7 +268,11 @@ export default class ProfileScreen extends React.Component {
 
         date.add(daysToAdd, 'days');
 
-        this.setState({ nextDonationDay: date.format('DD/MM/YYYY') });
+        let remainingDays = date.diff(Moment(), 'days');
+
+        this.setState({ nextDonationDay: date.format('DD/MM/YYYY'), remainingDays: remainingDays });
+
+        this.getNextDonationTextColor(remainingDays);
     }
 
     render() {
@@ -308,7 +327,7 @@ export default class ProfileScreen extends React.Component {
                         </View>
 
                         <FieldSet title={'Próxima Doação'}/>
-                        <Text> { this.state.nextDonationDay } </Text>
+                        <Text style={{color: this.state.nextDonationDayColor, fontSize: 17 }}> { this.state.nextDonationDay } </Text>
 
                         <View style={styles.divider}/>
 
