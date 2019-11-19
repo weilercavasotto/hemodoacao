@@ -191,10 +191,10 @@ export default class MapScreen extends React.Component {
             <View style={{
                 alignItems:'center',
                 justifyContent:'center',
-                width:'70%',
+                width:'60%',
                 position: 'absolute',
                 bottom: 20,
-                right: 50,
+                alignSelf: 'center',
                 height:70,
                 backgroundColor:'#fff',
                 borderRadius:8,

@@ -1,12 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text, Switch } from 'react-native';
+import { View, StyleSheet, Image, Text, Switch, ScrollView } from 'react-native';
 import {Card, Overlay, Button, Slider} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Header from '../components/Header';
 import FieldSet from '../components/FieldSet';
 import {Auth, Firestore} from '../api/Firebase';
-import {ScrollView} from "react-native-gesture-handler";
 
 export default class ProfileScreen extends React.Component {
 
@@ -56,8 +55,8 @@ export default class ProfileScreen extends React.Component {
             <View style={styles.mainContainer}>
                 <Header title={'CONFIGURAÇÕES'}/>
 
-                <Card containerStyle={{ height: '84%' }}>
-                    <View style={{alignItems: "center", justifyContent: "center"}}>
+                <Card containerStyle={{ height: '89%' }}>
+                    <ScrollView contentContainerStyle={{alignItems: "center", justifyContent: "center"}}>
                         <View style={styles.divider}/>
 
                         <View style={{ width: '100%' }}>
@@ -76,7 +75,7 @@ export default class ProfileScreen extends React.Component {
                             </View>
 
                             <View style={styles.userFieldContainer}>
-                                <Text style={ styles.userFieldPrimary }>{'Notificar Apenas Pedidos Compatíveis'}</Text>
+                                <Text style={ styles.userFieldPrimary }>{'Notificar Pedidos Compatíveis'}</Text>
                                 <View style={ styles.userFieldSecondary }>
                                     <Switch onChange={() => { this.handleSwitchChange('notify_only_compatible') }} value={this.state.user.data.notify_only_compatible} />
                                 </View>
@@ -134,7 +133,7 @@ export default class ProfileScreen extends React.Component {
 
                         </View>
 
-                    </View>
+                    </ScrollView>
                 </Card>
             </View>
         );
