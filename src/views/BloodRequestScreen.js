@@ -308,7 +308,7 @@ export default class BloodRequestScreen extends React.Component {
             <View style={styles.mainContainer}>
                 <Header backScreen={'Login'} navigator={ this.props.navigation } title={'SOLICITAR NOVA DOAÇÃO'}/>
                 <Card containerStyle={styles.cardContainer}>
-                    <ScrollView>
+                    <ScrollView keyboardShouldPersistTaps={'always'}>
                         <FieldSet title={'Dados do Solicitante'}/>
 
                         <TextField onBlur={ () => { this.validateInput('user_name') } } error={this.state.inputError.user_name} onChangeText={ (value) => this.handleInputValue('user_name', value) } label={'Nome do Solicitante'} tintColor='#ff4949' lineWidth={1}/>
@@ -371,6 +371,7 @@ export default class BloodRequestScreen extends React.Component {
                                 nearbyPlacesAPI='GooglePlacesSearch'
                                 styles={ googleAutoCompleteStyle }
                                 query= {{ key: 'AIzaSyAHFNbd3p3IJiyofotBju__XMEJdfGzZiE', language: 'pt-BR' }}
+                                listViewDisplayed={false}
                                 onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
                                     _mapView.animateToRegion({
                                         latitude: details.geometry.location.lat,
@@ -465,7 +466,7 @@ const styles = StyleSheet.create({
     },
     cardContainer: {
         marginHorizontal: 8,
-        height: '83%'
+        height: '89%'
     },
 });
 

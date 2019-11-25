@@ -221,7 +221,7 @@ export default class MapScreen extends React.Component {
     render() {
 
       return (
-          <View style={{flex: 1}}>
+          <View style={{flex: 1}} keyboardShouldPersistTaps={'always'}>
           <Header title={'Mapa de Hemocentros'}/>
 
             <NavigationEvents
@@ -285,6 +285,7 @@ export default class MapScreen extends React.Component {
                   nearbyPlacesAPI='GooglePlacesSearch'
                   styles={ googleAutoCompleteStyle }
                   query= {{ key: 'AIzaSyAHFNbd3p3IJiyofotBju__XMEJdfGzZiE', language: 'pt-BR' }}
+                  listViewDisplayed={false}
                   onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
 
                       _mapView.animateToRegion({

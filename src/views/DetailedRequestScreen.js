@@ -89,6 +89,7 @@ export default class DetailedRequestScreen extends React.Component {
             <Overlay overlayStyle={{ padding: 0, margin: 0, width: '95%' }} isVisible={ this.state.showMapModal }>
 
                 <MapView
+                    showsUserLocation={ true }
                     loadingEnabled={ true }
                     provider={PROVIDER_GOOGLE}
                     style={{flex: 1}}
@@ -182,17 +183,17 @@ export default class DetailedRequestScreen extends React.Component {
                 { this.state.request.geometry_location ? mapButton : null }
                 { this.state.request.geometry_location ? this.showLocationOnMap() : null }
 
-                <View style={styles.divider}/>
+                <View style={{ marginTop: '3%' }}/>
 
                 { this.renderBloodComparation() }
 
-                <View style={styles.divider}/>
+                <View style={{ marginTop: '5%' }}/>
                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'phone'}/> } onPress={() => { MediaHelper.callNumber(this.state.request.user_phone) }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{backgroundColor: '#ff4949'}} title={'ENTRAR EM CONTATO'}/>
 
-                <View style={styles.divider}/>
+                <View style={{ marginTop: '5%' }}/>
                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'envelope'}/> } onPress={() => { MediaHelper.sendEmail(this.state.request.user_email) }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{backgroundColor: '#ff4949'}} title={'ENVIAR E-MAIL'}/>
 
-                <View style={styles.divider}/>
+                <View style={{ marginTop: '5%' }}/>
                 <Button  iconRight icon={ <Icon size={17} style={{marginLeft: '5%', color: 'white'}} solid alt name={'share-alt'}/> } onPress={() => { this.shareBloodRequest() }} raised={true} titleStyle={{fontSize: 18, fontWeight: 'bold'}} buttonStyle={{backgroundColor: '#ff4949'}} title={'COMPARTILHAR'}/>
 
             </View>
@@ -258,11 +259,11 @@ export default class DetailedRequestScreen extends React.Component {
         return (
             <View style={styles.mainContainer}>
                 <Header backScreen={'Login'} navigator={ this.props.navigation } title={'INFORMAÇÕES'}/>
-                <Card containerStyle={{ height: '84%' }}>
+                <Card containerStyle={{ height: '89%' }}>
                     <ScrollView contentContainerStyle={{alignItems: "center", justifyContent: "center"}}>
                         <Text style={{ fontSize: 20, color: '#ff4949', fontWeight: 'bold' }}> PEDIDO DE DOAÇÃO </Text>
 
-                        <View style={styles.divider}/>
+                        <View style={{ marginTop: '5%'}}/>
 
                         { this.state.request ? this.renderRequestInfo() : this.renderLoadingIndicator() }
 

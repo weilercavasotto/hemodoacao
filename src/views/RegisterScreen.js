@@ -278,6 +278,8 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         marginTop: '3%',
         padding: 10,
+        width: 350,
+        alignItems: 'center',
         justifyContent: 'center'
     },
     bloodTypeSelectionText: {
@@ -292,6 +294,6 @@ const styles = StyleSheet.create({
     },
     cardContainer: {
         marginHorizontal: 8,
-        height: '83%'
+        height: '89%'
     },
 });
